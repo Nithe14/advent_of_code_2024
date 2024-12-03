@@ -4,7 +4,7 @@ use std::fs::read_to_string;
 use utils::get_input_path;
 
 fn main() {
-    let input_path = std::env::args().nth(1).unwrap_or(get_input_path("d1"));
+    let input_path = get_input_path("d1");
     let (left, right) = parse_input(&input_path).unwrap_or_else(|err| {
         eprintln!("Cannot parse input file: {err}");
         std::process::exit(1);

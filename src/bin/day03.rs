@@ -6,8 +6,8 @@ use utils::get_input_path;
 static RE: LazyLock<Regex> = LazyLock::new(|| Regex::new(r"mul\((\d+),(\d+)\)").unwrap());
 
 fn main() {
-    let path = std::env::args().nth(1).unwrap_or(get_input_path("d3"));
-    let input = read_to_string(path).unwrap_or_else(|err| {
+    let input_path = get_input_path("d3");
+    let input = read_to_string(input_path).unwrap_or_else(|err| {
         eprintln!("Cannot parse input file: {err}");
         std::process::exit(1);
     });
